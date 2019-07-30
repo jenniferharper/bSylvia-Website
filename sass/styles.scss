@@ -1,7 +1,7 @@
 // Import all the partial files
 @import 'variables';
 @import 'mixins';
-@import url('https://fonts.googleapis.com/css?family=Poppins:700|Raleway:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,700|Raleway:300,400,600');
 @import url('https://d2ta2fpo91apla.cloudfront.net/fontawesome-free-5.9.0-web/css/all.min.css');
 
 
@@ -43,6 +43,11 @@ h1{
 h2{
 	font-size:40px; 
 }
+h3{
+	font-size:17px;
+	font-weight: 300; 
+}
+
 .pic-frame {
 	img{
 		position: absolute;
@@ -50,6 +55,7 @@ h2{
 }
 
 .responsive-img img{ width:100%; height:auto;}
+
 .fit img {
 	width:100%; 
 	height:100%;
@@ -78,18 +84,17 @@ h2{
 		padding:20px 0;
 	}
 }
-@media (max-width:960px){
-	.container > .row{
-	  padding:20px;
-	}  
-  }
-
-//   @media (max-width: 1200px) and (min-width:990px){
-// 	.container {
-// 		max-width: calc(100% - 40px);
-// 		margin:0 auto;
-// 	}
+// @media (max-width:1200px){
+// 	.container > .row{
+// 	  padding:20px;
+// 	}  
 //   }
+
+  .container{
+	@media(min-width:1200px){
+		max-width:1240px;
+	}
+}
 
 
 // if no js
@@ -100,12 +105,17 @@ h2{
 .pad-bottom{padding-bottom:0px;}
 }
 
+
+.page-wrapper{
+	overflow-x: hidden;
+	overflow-y:hidden;
+}
 // section{ }
 
 /**********Universal*****************/
 
 .hero{
-overflow: hidden;
+// overflow: hidden;
 position: relative;
 	&::before,
 	&::after{
@@ -115,13 +125,13 @@ position: relative;
 		z-index: -1;
 	}
 
-	&::after{
-		width:150%;
-		height:100%;
-		background-color: darken($main, 10%);
-		top:-50%;
-		transform: rotate(20deg);
-	}
+	// &::after{
+	// 	width:150%;
+	// 	height:100%;
+	// 	background-color: darken($main, 10%);
+	// 	top:-50%;
+	// 	transform: rotate(20deg);
+	// }
 	&::before{
 		width:100%;
 		height:calc(100% - 100px);
@@ -132,20 +142,21 @@ position: relative;
 
 /**********Universal feature*****************/
 .feature-cont{
-	border-radius:  10px;
+	background-color: #fff;
+	// border-radius:  10px;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
 	.img-area{
 		overflow:hidden;
-		border-top-left-radius: 10px;
-		border-top-right-radius: 10px;
+		// border-top-left-radius: 10px;
+		// border-top-right-radius: 10px;
   	}
   
 	.text-area{
 		padding:20px 40px;
   	}
-  
- 	a{
+}
+ 	a.circle{
 		position: absolute;
 		right: 20px;
 		bottom: -30px;
@@ -170,14 +181,14 @@ position: relative;
 			right:-10px;
 		}
   	}
-}
+
 
 /**********intro*****************/
 
 #intro{
 position: relative;
 z-index: 1;
-margin:8% 0;
+margin:6% 0;
 	.container-fluid{
 		padding:4%;
 	}
@@ -187,13 +198,17 @@ margin:8% 0;
 		}
 	}
 
-	.row.inner{		
+	.row.inner{	
+		padding:8%;	
 		@media (min-width:1200px){
+			padding:0;
 			padding-left:8%;
 		}
 	}
 
-	h2,p{
+
+	h2, p{
+		color:#fff;
 		padding-bottom:8%;
 		@media(max-width:1200px){
 
@@ -202,32 +217,44 @@ margin:8% 0;
 		}
 	}
 
+	.text-area p{
+		color:#000;
+	}
+
+	.fit{
+		padding-left:0;
+	}
+
 	&::after{
 		display: block;
 		position: absolute;
 		content:'';
 		z-index: -1;
-		background-color:$feature;
+		background-color:$dark;
 		width:calc(100% - 16%);
 		left:8%;
 		right:8%;
 		height:100%;
 		top:0;
-		@media(max-width:575px){
+		@media(max-width:1200px){
 			width:100%;
+			left:0;
 		}
 	}
 }
 
 
 
-
 .second{
 	background: #fff;
+	padding-bottom:6%;
+	.double-cont{
+		padding-left:40px;
+	}
 }
   
-  @media (max-width:767px){
-	.second .row{
+  @media (max-width:768px){
+	.second .container > .row{
 	  flex-direction: column-reverse
 	}
   }
@@ -235,15 +262,157 @@ margin:8% 0;
  
   
   
-//   @media (min-width:767px){
-// 	.double-cont h2{
-// 	  margin-right:-50%;
-// 	}
-// 	.double-cont .row div:last-of-type img{
-// 	  margin-left:-30%;
-// 	  margin-bottom: -40px;
-// 	}
-// 	.double-cont .row div:last-of-type p{
-// 	  padding:40px;
-// 	 }
-//   }
+.usp{
+	padding:4% 0 2% 0;
+	h3,p{
+		text-align: center;
+	}
+	figure{
+		max-width:120px;
+		margin:0 auto;
+	}
+	.container{
+		@media (max-width: 990px) and (min-width:768px){
+			max-width: 100%;
+		}
+	}
+
+	@media (min-width:1200px){
+		p{padding:0 20px;}
+	}
+}
+
+
+#image{
+	.fit{
+		max-height:70vh;
+		padding:0;
+	}
+}
+
+
+.horizon-top{
+	background-color:$dark;
+	.row{
+		color:#fff;
+		padding:8% 0;
+		p{
+			max-width: 800px;
+			margin:0 auto;
+		}
+
+	}
+}
+#horizon-bottom{
+	position: relative;
+	&::after{
+		display: block;
+		position: absolute;
+		content:'';
+		background-color: #fff;
+		width:100%;
+		height:100px;
+		left:0;
+		bottom:0;
+	}
+	.row{
+		@media (min-width:768px){
+			-ms-flex-wrap: nowrap!important;
+			flex-wrap: nowrap!important;
+		}
+
+	}
+
+	background-color:$dark;
+
+}
+
+.second.two{
+	.row{
+		padding-top:8%;
+	}
+}
+
+
+#footer{
+	padding:4% 0 8%;
+	// background-color:$main;
+/* FOOTER STYLES GENERAL--------*/
+.coln{
+	p{
+	   font-size: 14px; 
+	   padding:14px 10px ;
+	   margin:0
+	}
+	img{
+	  max-width:200px;
+	  margin:0 auto;
+	  width:100%;
+	}
+	ul{
+	  padding-left:0;
+	  margin:16px 0;
+	  list-style: none;
+	  li{
+		padding:10px 0;
+	  }
+	}
+  }
+  
+	.coln{
+	  border-top:2px solid #333;
+	  border-bottom:2px solid #333;
+	  padding:0;
+	}
+  
+	.coln:last-of-type{  
+	  ul{
+		padding-left:16px;
+	  }
+	  ul li{
+		display: inline-block;
+		padding-right:30px;
+	  }
+	  .row{
+		border-left:2px solid #333;
+		height:100%;
+		width:100%;
+		margin:0;
+	  }
+	  .row div:first-of-type{
+		border-bottom:2px solid #333;
+	  }
+	}
+  
+	// media queries
+  
+	@media (max-width:990px){
+		  .box-grid{
+		padding:20px;
+	  }
+	  .coln{
+		 text-align: center;     
+	  }
+	  .coln:first-of-type{
+		padding:20px;
+	  }
+	}
+  
+	@media (max-width:767px){
+  
+	  .coln{
+		 text-align: center;
+	   }
+  
+	  .coln ul li{
+		width:100%;
+	  }
+	  .coln{
+		border-top:none;
+	  }
+	  .coln:last-of-type .row{
+		border-right:2px solid #333;
+	  }
+	}
+  
+}
