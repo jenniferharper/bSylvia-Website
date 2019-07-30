@@ -1,9 +1,8 @@
 // Import all the partial files
 @import 'variables';
 @import 'mixins';
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,700|Raleway:300,400,600');
 @import url('https://d2ta2fpo91apla.cloudfront.net/fontawesome-free-5.9.0-web/css/all.min.css');
-
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Poppins:300,400,700|Raleway:300,400,600&display=swap');
 
 html, body {
     height: 100%;
@@ -34,10 +33,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1{
-	font-size:60px;   
+	z-index: 1;
+	color:$dark;
+	font-size:60px;
+	line-height:2em;   
 	margin-bottom:40px;
 	@media(max-width:1200px){
 		font-size:calc(30px + 2vw);
+	}
+	span{
+		font-family: $other-font;
+		display: block;
+		color:$feature;
+		font-size: 100px;
+		line-height: 1em;
+		position:absolute;
+		z-index: -1;
+		top:60px;;
+		left:-40px;
 	}
 }
 h2{
@@ -115,6 +128,7 @@ h3{
 /**********Universal*****************/
 
 .hero{
+	padding-top:4%;
 // overflow: hidden;
 position: relative;
 	&::before,
@@ -184,13 +198,33 @@ position: relative;
 
 
 /**********intro*****************/
+.usp{
+	padding:6% 0 4% 0;
+	h3,p{
+		text-align: center;
+	}
+	figure{
+		max-width:120px;
+		margin:0 auto;
+	}
+	.container{
+		@media (max-width: 990px) and (min-width:768px){
+			max-width: 100%;
+		}
+	}
+
+	@media (min-width:1200px){
+		p{padding:0 20px;}
+	}
+}
+
 
 #intro{
 position: relative;
 z-index: 1;
 margin:6% 0;
 	.container-fluid{
-		padding:4%;
+		padding:8% 4%;
 	}
 	.container-fluid > .row{
 		@media (max-width:767px){
@@ -222,7 +256,7 @@ margin:6% 0;
 	}
 
 	.fit{
-		padding-left:0;
+		// padding-left:0;
 	}
 
 	&::after{
@@ -243,14 +277,40 @@ margin:6% 0;
 	}
 }
 
+.products{
+	padding-top:6%;
+	padding-bottom:8%;
+	h2{
+		position: relative;
+		padding-bottom:8%;
+		z-index: 1;
+		&::after{
+			content: 'your style';
+			position: absolute;
+			top:-40px;
+			display: block;
+			left:calc(50% - 420px);
+			font-size: 200px;
+			font-family:$other-font;
+			color:lighten($feature, 12%);
+			z-index: -10;
+			line-height: 0;
 
+		}
+	}
+}
 
 .second{
 	background: #fff;
-	padding-bottom:6%;
+	padding-bottom:8%;
+	padding-top:10%;
 	.double-cont{
 		padding-left:40px;
+		p{
+			padding:40px 0;
+		}
 	}
+
 }
   
   @media (max-width:768px){
@@ -262,30 +322,12 @@ margin:6% 0;
  
   
   
-.usp{
-	padding:4% 0 2% 0;
-	h3,p{
-		text-align: center;
-	}
-	figure{
-		max-width:120px;
-		margin:0 auto;
-	}
-	.container{
-		@media (max-width: 990px) and (min-width:768px){
-			max-width: 100%;
-		}
-	}
 
-	@media (min-width:1200px){
-		p{padding:0 20px;}
-	}
-}
 
 
 #image{
 	.fit{
-		max-height:70vh;
+		max-height:80vh;
 		padding:0;
 	}
 }
@@ -295,7 +337,7 @@ margin:6% 0;
 	background-color:$dark;
 	.row{
 		color:#fff;
-		padding:8% 0;
+		padding:12% 0 8%;
 		p{
 			max-width: 800px;
 			margin:0 auto;
