@@ -36,12 +36,20 @@ h1{
 	z-index: 1;
 	color:$dark;
 	font-size:50px;	  
-
+	@media (max-width:767px){
+		font-size:40px;
+	}
+	@media (min-width:990px) and (max-width:1200px){
+		font-size: 43px;
+	}
 }
 
 
 h2{
 	font-size:40px; 
+	@media (max-width:990px){
+		font-size:30px;
+	}
 }
 h3{
 	font-size:17px;
@@ -79,11 +87,11 @@ h3{
 		height:100vh;
 	}
 }
-@media (max-width:767px){
-	section{
-		padding:20px 0;
-	}
-}
+// @media (max-width:767px){
+// 	section {
+// 		padding:20px 0;
+// 	}
+// }
 
   .container{
 	@media(min-width:1200px){
@@ -99,8 +107,15 @@ h3{
 
 
 /**********Universal*****************/
-
-
+.cover {
+	width: 100%;
+	height: 100%;
+	background:$main;
+	position: absolute;
+  }
+  .clip-me{
+	  background-color:$dark;
+  }
 
 /**********Universal feature*****************/
 .feature-cont{
@@ -137,6 +152,7 @@ h3{
 		background-color: $feature;
 		color: #fff;
 		transition: all .5s ease-in-out;
+		z-index: 2;
 		&:hover{
 			text-decoration: none;
 			background-color: $dark;
@@ -155,6 +171,12 @@ h3{
 			content:'';
 			z-index: -1;
 		}
+
+		.hero-intro{
+			@media (max-width:990px){
+				padding-bottom:40px;
+			}
+		}
 		.small-text{
 			font-family:$other-font;
 			font-size:1.7em;
@@ -162,18 +184,32 @@ h3{
 			letter-spacing: 2px;
 		}
 	
-		// &::after{
-		// 	width:150%;
-		// 	height:100%;
-		// 	background-color: darken($main, 10%);
-		// 	top:-50%;
-		// 	transform: rotate(20deg);
-		// }
 		&::before{
 			width:100%;
 			height:calc(100% - 100px);
 			background-color:lighten($main, 20%);
 			top:0px;
+		}
+		h1{
+			z-index: 1;
+			&::after{
+				content: 'your';
+				position: relative;
+				top:0;
+				display: none;
+				font-size:8vw;
+				font-family:$other-font;
+				color:lighten($main, 6%);
+				font-weight:lighter;
+				z-index: -10;
+				line-height: 0;
+				@media(min-width:769px){
+					display:block;
+					top:-40px;
+					position: absolute;
+					left:-40px
+				}
+			}
 		}
 	}
 
@@ -239,7 +275,7 @@ margin:6% 0;
 	h2, p{
 		color:#fff;
 		padding-bottom:8%;
-		@media(max-width:1200px){
+		@media(max-width:1200px) and (min-width:990px){
 
 			max-width:80%;
 			margin:0 auto;
@@ -252,12 +288,14 @@ margin:6% 0;
 
 	.small-text{
 		font-family:$other-font;
+		font-weight:lighter;
 		font-size:1.7em;
-		color:$feature;
+		color:$main;
 		letter-spacing: 2px;
 		font-size:9vw;
 		position: absolute;
 		top:-100px;
+		z-index: 2;
 	}
 
 
@@ -267,8 +305,9 @@ margin:6% 0;
 		content:'';
 		z-index: -1;
 		background-color:$dark;
-		width:calc(100% - 16%);
-		left:8%;
+		
+		width:calc(100% - 8%);
+		left:0;
 		right:8%;
 		height:100%;
 		top:0;
@@ -297,7 +336,8 @@ margin:6% 0;
 			display: block;
 			font-size:10vw;
 			font-family:$other-font;
-			color:lighten($feature, 12%);
+			font-weight:lighter;
+			color:lighten($feature, 6%);
 			z-index: -10;
 			line-height: 0;
 			width:100%;
@@ -399,9 +439,12 @@ margin:6% 0;
 	padding-bottom:8%;
 	padding-top:10%;
 	.double-cont{
-		padding-left:40px;
+
 		p{
 			padding:20px 0 40px;
+		}
+		@media (min-width:768px){
+			padding-left:40px;
 		}
 	}
 	h2{

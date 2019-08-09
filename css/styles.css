@@ -34,9 +34,18 @@ h1 {
   z-index: 1;
   color: #263238;
   font-size: 50px; }
+  @media (max-width: 767px) {
+    h1 {
+      font-size: 40px; } }
+  @media (min-width: 990px) and (max-width: 1200px) {
+    h1 {
+      font-size: 43px; } }
 
 h2 {
   font-size: 40px; }
+  @media (max-width: 990px) {
+    h2 {
+      font-size: 30px; } }
 
 h3 {
   font-size: 17px;
@@ -75,9 +84,6 @@ h3 {
 @media (min-width: 768px) {
   .height {
     height: 100vh; } }
-@media (max-width: 767px) {
-  section {
-    padding: 20px 0; } }
 @media (min-width: 1200px) {
   .container {
     max-width: 1240px; } }
@@ -87,6 +93,15 @@ h3 {
   overflow-y: hidden; }
 
 /**********Universal*****************/
+.cover {
+  width: 100%;
+  height: 100%;
+  background: #92c4b5;
+  position: absolute; }
+
+.clip-me {
+  background-color: #263238; }
+
 /**********Universal feature*****************/
 .feature-cont {
   background-color: #fff;
@@ -114,7 +129,8 @@ a.circle {
   border-radius: 100%;
   background-color: #ffa9a7;
   color: #fff;
-  transition: all .5s ease-in-out; }
+  transition: all .5s ease-in-out;
+  z-index: 2; }
   a.circle:hover {
     text-decoration: none;
     background-color: #263238;
@@ -129,6 +145,9 @@ a.circle {
     position: absolute;
     content: '';
     z-index: -1; }
+  @media (max-width: 990px) {
+    .hero .hero-intro {
+      padding-bottom: 40px; } }
   .hero .small-text {
     font-family: "Pacifico", cursive;
     font-size: 1.7em;
@@ -139,6 +158,25 @@ a.circle {
     height: calc(100% - 100px);
     background-color: #d4e8e2;
     top: 0px; }
+  .hero h1 {
+    z-index: 1; }
+    .hero h1::after {
+      content: 'your';
+      position: relative;
+      top: 0;
+      display: none;
+      font-size: 8vw;
+      font-family: "Pacifico", cursive;
+      color: #a6cfc2;
+      font-weight: lighter;
+      z-index: -10;
+      line-height: 0; }
+      @media (min-width: 769px) {
+        .hero h1::after {
+          display: block;
+          top: -40px;
+          position: absolute;
+          left: -40px; } }
 
 /**********intro*****************/
 .usp {
@@ -184,7 +222,7 @@ a.circle {
   #intro h2, #intro p {
     color: #fff;
     padding-bottom: 8%; }
-    @media (max-width: 1200px) {
+    @media (max-width: 1200px) and (min-width: 990px) {
       #intro h2, #intro p {
         max-width: 80%;
         margin: 0 auto; } }
@@ -192,20 +230,22 @@ a.circle {
     color: #000; }
   #intro .small-text {
     font-family: "Pacifico", cursive;
+    font-weight: lighter;
     font-size: 1.7em;
-    color: #ffa9a7;
+    color: #92c4b5;
     letter-spacing: 2px;
     font-size: 9vw;
     position: absolute;
-    top: -100px; }
+    top: -100px;
+    z-index: 2; }
   #intro::after {
     display: block;
     position: absolute;
     content: '';
     z-index: -1;
     background-color: #263238;
-    width: calc(100% - 16%);
-    left: 8%;
+    width: calc(100% - 8%);
+    left: 0;
     right: 8%;
     height: 100%;
     top: 0; }
@@ -231,7 +271,8 @@ a.circle {
       display: block;
       font-size: 10vw;
       font-family: "Pacifico", cursive;
-      color: #ffe5e4;
+      font-weight: lighter;
+      color: #ffc7c6;
       z-index: -10;
       line-height: 0;
       width: 100%; }
@@ -295,10 +336,11 @@ a.circle {
   background: #fff;
   padding-bottom: 8%;
   padding-top: 10%; }
-  .special-feature .double-cont {
-    padding-left: 40px; }
-    .special-feature .double-cont p {
-      padding: 20px 0 40px; }
+  .special-feature .double-cont p {
+    padding: 20px 0 40px; }
+  @media (min-width: 768px) {
+    .special-feature .double-cont {
+      padding-left: 40px; } }
 
 @media (max-width: 992px) {
   .special-feature .container > .row {
