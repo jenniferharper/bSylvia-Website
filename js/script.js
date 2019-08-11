@@ -9,7 +9,7 @@ TweenLite.defaultEase =  Power2.easeInOut;
 
   
 
-
+if (!Modernizr.touch) {
 $(".clip-me").each(function() {
 	var tl = new TimelineMax();
 	var cov = $(this).find(".cover");
@@ -45,6 +45,7 @@ $(".clip-me").each(function() {
 	  .addIndicators()
 	  .addTo(controller);
   });
+}
 
 })(jQuery);
 
