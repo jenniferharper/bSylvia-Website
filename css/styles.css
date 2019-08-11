@@ -305,7 +305,8 @@ a.circle {
 
 .full-img-feature .fit {
   max-height: 80vh;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden; }
 
 .testimonials-top {
   background-color: #263238; }
