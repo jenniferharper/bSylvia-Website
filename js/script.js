@@ -13,7 +13,7 @@ TweenLite.defaultEase =  Power2.easeInOut;
 $(".clip-me").each(function() {
 	var tl = new TimelineMax();
 	var cov = $(this).find(".cover");
-	var img = $(this).find(".special");
+	var img = $(this).find(".img-fluid");
 	
 	tl.to(cov, 0, {background:"#92c4b5"})
 	tl.from(cov, 1, { scaleX: 0, transformOrigin: "right",ease:Power4.easeOut });
@@ -72,7 +72,6 @@ $(".full-img-feature").each(function() {
 // scroll screenLeft 
 
 if (!Modernizr.touch){
-
 var tween = new TweenMax.to('.scroll-left', 1, {	x:'-150%'})
 
 
