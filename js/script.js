@@ -7,7 +7,6 @@
 if (!Modernizr.touch) {
 var controller = new ScrollMagic.Controller();
 TweenLite.defaultEase =  Power2.easeInOut;
-
   
 
 
@@ -15,7 +14,8 @@ $(".clip-me").each(function() {
 	var tl = new TimelineMax();
 	var cov = $(this).find(".cover");
 	var img = $(this).find(".special");
-  
+	
+	tl.to(cov, 0, {background:"#92c4b5"})
 	tl.from(cov, 1, { scaleX: 0, transformOrigin: "right",ease:Power4.easeOut });
 	tl.to(cov, 1, { scaleX: 0, transformOrigin: "left" ,ease:Power4.easeOut}, "reveal");
 	tl.from(img, 1.5, { opacity: 0,ease:Power4.easeOut }, "reveal");
