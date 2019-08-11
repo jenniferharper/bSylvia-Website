@@ -401,6 +401,13 @@ margin:6% 0;
 }
 
 
+.touch {
+	.testimonials .scroll-left {
+		-ms-flex-wrap: wrap !important;
+		flex-wrap: wrap !important;
+	}
+}
+
 .testimonials{
 	position: relative;
 	background-color:$dark;
@@ -413,19 +420,13 @@ margin:6% 0;
 		}
 	}
 
-	.touch .scroll-left {
-		-ms-flex-wrap: wrap!important;
-		flex-wrap: wrap!important;
-	}
-
-	.no-touch .scroll-left{
+	.scroll-left{
 		padding-bottom:4%;
 		div{
 			padding-bottom:30px;
 		}
 
 		@media (min-width:1020px){
-
 			-ms-flex-wrap: nowrap!important;
 			flex-wrap: nowrap!important;
 			div{

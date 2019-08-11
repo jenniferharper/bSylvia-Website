@@ -308,6 +308,10 @@ a.circle {
   padding: 0;
   overflow: hidden; }
 
+.touch .testimonials .scroll-left {
+  -ms-flex-wrap: wrap !important;
+  flex-wrap: wrap !important; }
+
 .testimonials {
   position: relative;
   background-color: #263238; }
@@ -317,18 +321,15 @@ a.circle {
     .testimonials .row:first-of-type p {
       max-width: 800px;
       margin: 0 auto; }
-  .testimonials .touch .scroll-left {
-    -ms-flex-wrap: wrap !important;
-    flex-wrap: wrap !important; }
-  .testimonials .no-touch .scroll-left {
+  .testimonials .scroll-left {
     padding-bottom: 4%; }
-    .testimonials .no-touch .scroll-left div {
+    .testimonials .scroll-left div {
       padding-bottom: 30px; }
     @media (min-width: 1020px) {
-      .testimonials .no-touch .scroll-left {
+      .testimonials .scroll-left {
         -ms-flex-wrap: nowrap !important;
         flex-wrap: nowrap !important; }
-        .testimonials .no-touch .scroll-left div {
+        .testimonials .scroll-left div {
           padding-bottom: 0; } }
   .testimonials::after {
     display: block;
