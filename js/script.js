@@ -4,12 +4,13 @@ $(window).resize(function() {
         location.reload();
 });
 
+if (!Modernizr.touch) {
 var controller = new ScrollMagic.Controller();
 TweenLite.defaultEase =  Power2.easeInOut;
 
   
 
-if (!Modernizr.touch) {
+
 $(".clip-me").each(function() {
 	var tl = new TimelineMax();
 	var cov = $(this).find(".cover");
