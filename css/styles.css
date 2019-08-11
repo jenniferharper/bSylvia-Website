@@ -321,12 +321,15 @@ a.circle {
     padding-bottom: 4%; }
     .testimonials .scroll-left div {
       padding-bottom: 30px; }
-    @media (min-width: 1024px) {
+    @media (min-width: 1020px) {
       .testimonials .scroll-left {
         -ms-flex-wrap: nowrap !important;
         flex-wrap: nowrap !important; }
         .testimonials .scroll-left div {
           padding-bottom: 0; } }
+    .testimonials .scroll-left .no-touch {
+      -ms-flex-wrap: wrap !important;
+      flex-wrap: wrap !important; }
   .testimonials::after {
     display: block;
     position: absolute;

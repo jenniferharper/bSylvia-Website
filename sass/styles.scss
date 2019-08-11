@@ -417,14 +417,24 @@ margin:6% 0;
 		div{
 			padding-bottom:30px;
 		}
-		@media (min-width:1024px){
+
+
+		@media (min-width:1020px){
+
 			-ms-flex-wrap: nowrap!important;
 			flex-wrap: nowrap!important;
 			div{
 				padding-bottom:0;
 			}
 		}
+
+		.no-touch{
+			-ms-flex-wrap: wrap!important;
+			flex-wrap: wrap!important;
+		}
 	}
+
+
 	&::after{
 		display: block;
 		position: absolute;

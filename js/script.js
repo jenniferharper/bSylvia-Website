@@ -69,9 +69,12 @@ $(".full-img-feature").each(function() {
 	  .addTo(controller);
   });
 
-// scroll screenLeft
-if ($( window ).width() >= 1024) {
-var tween = new TweenMax.to('.scroll-left', 1, {	x:'-125%'});
+// scroll screenLeft 
+
+if (!Modernizr.touch){
+
+var tween = new TweenMax.to('.scroll-left', 1, {	x:'-150%'})
+
 
 var scene = new ScrollMagic.Scene({
 	triggerElement: '.testimonials',
@@ -85,6 +88,7 @@ var scene = new ScrollMagic.Scene({
 	.setTween(tween)
 	.addTo(controller)
 }
+
 
 
 })(jQuery);
