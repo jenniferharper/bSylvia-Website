@@ -27,7 +27,6 @@ $(".clip-me").each(function() {
 
 	})
 	  .setTween(tl)
-	  .addIndicators()
 	  .addTo(controller);
   });
 
@@ -45,7 +44,6 @@ if ($( window ).width() >= 768) {
 	  triggerHook: .7,
 	})
 	  .setTween(tl)
-	  .addIndicators()
 	  .addTo(controller);
   });
 }
@@ -65,7 +63,6 @@ $(".full-img-feature").each(function() {
 
 	})
 	  .setTween(tl)
-	  .addIndicators()
 	  .addTo(controller);
   });
 
@@ -82,7 +79,6 @@ var scene = new ScrollMagic.Scene({
 	reverse: true
 	})
 
-	.addIndicators({name:'graph'})
 	.setPin('.testimonials')
 	.setTween(tween)
 	.addTo(controller)
