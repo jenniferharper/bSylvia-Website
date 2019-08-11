@@ -405,6 +405,9 @@ margin:6% 0;
 	.testimonials .scroll-left {
 		-ms-flex-wrap: wrap !important;
 		flex-wrap: wrap !important;
+		div{
+			padding-bottom:30px;
+		}
 	}
 }
 
@@ -422,10 +425,6 @@ margin:6% 0;
 
 	.scroll-left{
 		padding-bottom:4%;
-		div{
-			padding-bottom:30px;
-		}
-
 		@media (min-width:1020px){
 			-ms-flex-wrap: nowrap!important;
 			flex-wrap: nowrap!important;
@@ -434,9 +433,6 @@ margin:6% 0;
 			}
 		}
 	}
-
-
-
 
 	&::after{
 		display: block;

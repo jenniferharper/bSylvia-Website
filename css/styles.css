@@ -311,6 +311,8 @@ a.circle {
 .touch .testimonials .scroll-left {
   -ms-flex-wrap: wrap !important;
   flex-wrap: wrap !important; }
+  .touch .testimonials .scroll-left div {
+    padding-bottom: 30px; }
 
 .testimonials {
   position: relative;
@@ -323,8 +325,6 @@ a.circle {
       margin: 0 auto; }
   .testimonials .scroll-left {
     padding-bottom: 4%; }
-    .testimonials .scroll-left div {
-      padding-bottom: 30px; }
     @media (min-width: 1020px) {
       .testimonials .scroll-left {
         -ms-flex-wrap: nowrap !important;
