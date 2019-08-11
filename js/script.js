@@ -4,7 +4,7 @@
 //         location.reload();
 // });
 
-if (!Modernizr.touch) {
+// if (!Modernizr.touch) {
 var controller = new ScrollMagic.Controller();
 TweenLite.defaultEase =  Power2.easeInOut;
   
@@ -46,7 +46,7 @@ $(".clip-me").each(function() {
 	  .addIndicators()
 	  .addTo(controller);
   });
-}
+// }
 
 })(jQuery);
 
