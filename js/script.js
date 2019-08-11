@@ -50,7 +50,7 @@ if ($( window ).width() >= 768) {
   });
 }
 
-
+// image zoom
 $(".full-img-feature").each(function() {
 	var tl = new TimelineMax();
 	var img = $(this).find(".img-fluid");
@@ -68,6 +68,23 @@ $(".full-img-feature").each(function() {
 	  .addIndicators()
 	  .addTo(controller);
   });
+
+// scroll screenLeft
+if ($( window ).width() >= 1024) {
+var tween = new TweenMax.to('.scroll-left', 1, {	x:'-125%'});
+
+var scene = new ScrollMagic.Scene({
+	triggerElement: '.testimonials',
+	duration:'400%',
+	triggerHook: 0,
+	reverse: true
+	})
+
+	.addIndicators({name:'graph'})
+	.setPin('.testimonials')
+	.setTween(tween)
+	.addTo(controller)
+}
 
 
 })(jQuery);

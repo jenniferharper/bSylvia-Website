@@ -308,31 +308,34 @@ a.circle {
   padding: 0;
   overflow: hidden; }
 
-.testimonials-top {
-  background-color: #263238; }
-  .testimonials-top .row {
-    color: #fff;
-    padding: 12% 0 8%; }
-    .testimonials-top .row p {
-      max-width: 800px;
-      margin: 0 auto; }
-
-.testimonials-bottom {
+.testimonials {
   position: relative;
   background-color: #263238; }
-  .testimonials-bottom::after {
+  .testimonials .row:first-of-type {
+    color: #fff;
+    padding: 12% 0 8%; }
+    .testimonials .row:first-of-type p {
+      max-width: 800px;
+      margin: 0 auto; }
+  .testimonials .scroll-left {
+    padding-bottom: 4%; }
+    .testimonials .scroll-left div {
+      padding-bottom: 30px; }
+    @media (min-width: 1024px) {
+      .testimonials .scroll-left {
+        -ms-flex-wrap: nowrap !important;
+        flex-wrap: nowrap !important; }
+        .testimonials .scroll-left div {
+          padding-bottom: 0; } }
+  .testimonials::after {
     display: block;
     position: absolute;
     content: '';
     background-color: #fff;
     width: 100%;
-    height: 100px;
+    height: 150px;
     left: 0;
     bottom: 0; }
-  @media (min-width: 768px) {
-    .testimonials-bottom .row {
-      -ms-flex-wrap: nowrap !important;
-      flex-wrap: nowrap !important; } }
 
 .special-feature {
   background: #fff;

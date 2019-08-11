@@ -401,41 +401,42 @@ margin:6% 0;
 }
 
 
-.testimonials-top{
+.testimonials{
+	position: relative;
 	background-color:$dark;
-	.row{
+	.row:first-of-type{
 		color:#fff;
 		padding:12% 0 8%;
 		p{
 			max-width: 800px;
 			margin:0 auto;
 		}
-
 	}
-}
-.testimonials-bottom{
-	position: relative;
+	.scroll-left{
+		padding-bottom:4%;
+		div{
+			padding-bottom:30px;
+		}
+		@media (min-width:1024px){
+			-ms-flex-wrap: nowrap!important;
+			flex-wrap: nowrap!important;
+			div{
+				padding-bottom:0;
+			}
+		}
+	}
 	&::after{
 		display: block;
 		position: absolute;
 		content:'';
 		background-color: #fff;
 		width:100%;
-		height:100px;
+		height:150px;
 		left:0;
 		bottom:0;
 	}
-	.row{
-		@media (min-width:768px){
-			-ms-flex-wrap: nowrap!important;
-			flex-wrap: nowrap!important;
-		}
-
-	}
-
-	background-color:$dark;
-
 }
+
 
 .special-feature{
 	background: #fff;
