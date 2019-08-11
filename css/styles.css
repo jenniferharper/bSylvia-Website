@@ -317,19 +317,19 @@ a.circle {
     .testimonials .row:first-of-type p {
       max-width: 800px;
       margin: 0 auto; }
-  .testimonials .scroll-left {
+  .testimonials .touch .scroll-left {
+    -ms-flex-wrap: wrap !important;
+    flex-wrap: wrap !important; }
+  .testimonials .no-touch .scroll-left {
     padding-bottom: 4%; }
-    .testimonials .scroll-left div {
+    .testimonials .no-touch .scroll-left div {
       padding-bottom: 30px; }
     @media (min-width: 1020px) {
-      .testimonials .scroll-left {
+      .testimonials .no-touch .scroll-left {
         -ms-flex-wrap: nowrap !important;
         flex-wrap: nowrap !important; }
-        .testimonials .scroll-left div {
+        .testimonials .no-touch .scroll-left div {
           padding-bottom: 0; } }
-    .testimonials .scroll-left .no-touch {
-      -ms-flex-wrap: wrap !important;
-      flex-wrap: wrap !important; }
   .testimonials::after {
     display: block;
     position: absolute;

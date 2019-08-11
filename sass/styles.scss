@@ -412,12 +412,17 @@ margin:6% 0;
 			margin:0 auto;
 		}
 	}
-	.scroll-left{
+
+	.touch .scroll-left {
+		-ms-flex-wrap: wrap!important;
+		flex-wrap: wrap!important;
+	}
+
+	.no-touch .scroll-left{
 		padding-bottom:4%;
 		div{
 			padding-bottom:30px;
 		}
-
 
 		@media (min-width:1020px){
 
@@ -427,12 +432,9 @@ margin:6% 0;
 				padding-bottom:0;
 			}
 		}
-
-		.no-touch{
-			-ms-flex-wrap: wrap!important;
-			flex-wrap: wrap!important;
-		}
 	}
+
+
 
 
 	&::after{
