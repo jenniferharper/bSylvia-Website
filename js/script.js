@@ -69,7 +69,9 @@ $(".full-img-feature").each(function() {
 // scroll screenLeft 
 
 if (!Modernizr.touch){
-var tween = new TweenMax.to('.scroll-left', 1, {	x:'-150%'})
+var tween = new TimelineMax();
+tween.to('.scroll-left', 1, {	x:'-150%'},0)
+
 
 
 var scene = new ScrollMagic.Scene({
@@ -83,7 +85,6 @@ var scene = new ScrollMagic.Scene({
 	.setTween(tween)
 	.addTo(controller)
 }
-
 
 
 })(jQuery);
