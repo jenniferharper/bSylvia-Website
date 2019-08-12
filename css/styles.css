@@ -135,12 +135,14 @@ a.circle {
 /*************start******************/
 .navbar {
   background-color: #d4e8e2; }
-  .navbar img {
-    max-height: 60px; }
   .navbar a {
     color: #000; }
   .navbar a:hover {
-    color: #fff !important; }
+    color: #a3a3a3 !important; }
+  .navbar svg {
+    height: 80px; }
+  .navbar .logo-circle {
+    fill: #fff; }
 
 .navbar-light .navbar-toggler {
   border: none; }

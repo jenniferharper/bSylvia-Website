@@ -72,8 +72,6 @@ if (!Modernizr.touch){
 var tween = new TimelineMax();
 tween.to('.scroll-left', 1, {	x:'-150%'},0)
 
-
-
 var scene = new ScrollMagic.Scene({
 	triggerElement: '.testimonials',
 	duration:'400%',
@@ -86,6 +84,43 @@ var scene = new ScrollMagic.Scene({
 	.addTo(controller)
 }
 
+
+
+var tween = new TimelineMax();
+tween.to('.navbar', 1, {backgroundColor:'#fff'},0)
+.to('.nav-item', 1, {color:'#333'},0)
+.to('.logo-circle', 1, {fill:'#ffa9a7'},0)
+var scene = new ScrollMagic.Scene({triggerElement: ".usp", offset:'150' })
+.setTween(tween)
+.addTo(controller)
+
+
+var tween = new TimelineMax();
+tween.to('.navbar', 1, {backgroundColor:'#fff'},0)
+.to('.nav-item', 1, {color:'#333'},0)
+var scene = new ScrollMagic.Scene({triggerElement: ".products", offset:0,  triggerHook:0})
+.setTween(tween)
+.addTo(controller)
+
+
+var tween = new TimelineMax();
+tween.to('.navbar', 1, {backgroundColor:'#263238'},0)
+.to('.nav-item', 1, {color:'#fff'},0)
+.to('.logo', 1, {fill:'#fff'},0)
+.to('.logo-circle', 1, {fill:'#ffa9a7'},0)
+
+var scene = new ScrollMagic.Scene({triggerElement: ".testimonials", triggerHook:0, offset:'-150'})
+.setTween(tween)
+.addTo(controller)
+
+var tween = new TimelineMax();
+tween.to('.navbar', 1, {backgroundColor:'#fff'},0)
+.to('.nav-item', 1, {color:'#333'},0)
+.to('.logo', 1, {fill:'#000'},0)
+
+var scene = new ScrollMagic.Scene({triggerElement: ".special-feature", offset:0})
+.setTween(tween)
+.addTo(controller)
 
 })(jQuery);
 
