@@ -141,6 +141,9 @@ a.circle {
     color: #a3a3a3 !important; }
   .navbar svg {
     height: 80px; }
+    @media (max-width: 767px) {
+      .navbar svg {
+        height: 50px; } }
   .navbar .logo-circle {
     fill: #fff; }
 
