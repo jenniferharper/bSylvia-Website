@@ -85,7 +85,7 @@ var scene = new ScrollMagic.Scene({
 }
 
 
-
+if ($( window ).width() >= 768) {
 var tween = new TimelineMax();
 tween.to('.navbar', 1, {backgroundColor:'#fff'},0)
 .to('.nav-item', 1, {color:'#333'},0)
@@ -121,6 +121,8 @@ tween.to('.navbar', 1, {backgroundColor:'#fff'},0)
 var scene = new ScrollMagic.Scene({triggerElement: ".special-feature", offset:0})
 .setTween(tween)
 .addTo(controller)
+}
+
 
 })(jQuery);
 
