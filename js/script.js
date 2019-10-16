@@ -9,7 +9,8 @@ var elem = document.querySelector('#preloader');
 elem.style.display = 'block';
 var elem = document.querySelector('.is-loading');
 elem.style.overflow = 'hidden';
-
+var elem = document.querySelector('.page-wrapper');
+elem.style.display = 'none';
 
 
 // number of loaded images for preloader progress
@@ -63,7 +64,8 @@ function loadComplete() {
     // preloader out
     var preloaderOutTl = new TimelineMax();
  
-    preloaderOutTl
+	preloaderOutTl
+	.to($('.page-wrapper'), 0, {display:"block"})
         .set($('body.is-loading'), {css:{overflow:"visible"}})
 		.to($('#preloader'), 0.7, {yPercent: -100, ease:Power4.easeInOut})
 		
