@@ -353,12 +353,11 @@ svg {
   padding: 0;
   overflow: hidden; }
 
-.touch .testimonials .scroll-left {
+.touch .testimonials .scroll-left div {
   -ms-flex-wrap: wrap !important;
-  flex-wrap: wrap !important; }
-  .touch .testimonials .scroll-left div {
-    width: 50%;
-    padding-bottom: 30px; }
+  flex-wrap: wrap !important;
+  width: 50%;
+  padding-bottom: 30px; }
 
 .testimonials {
   position: relative;

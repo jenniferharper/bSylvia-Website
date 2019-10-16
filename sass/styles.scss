@@ -453,9 +453,10 @@ margin:6% 0;
 
 .touch {
 	.testimonials .scroll-left {
-		-ms-flex-wrap: wrap !important;
-		flex-wrap: wrap !important;
+
 		div{
+			-ms-flex-wrap: wrap !important;
+			flex-wrap: wrap !important;
 			width:50%;
 			padding-bottom:30px;
 		}
