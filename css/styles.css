@@ -353,11 +353,19 @@ svg {
   padding: 0;
   overflow: hidden; }
 
-.touch .testimonials .scroll-left div {
-  -ms-flex-wrap: wrap !important;
-  flex-wrap: wrap !important;
-  width: 50%;
-  padding-bottom: 30px; }
+.touch .testimonials {
+  margin-bottom: 60px; }
+  .touch .testimonials .scroll-left {
+    -ms-flex-wrap: wrap !important;
+    flex-wrap: wrap !important; }
+    .touch .testimonials .scroll-left div.col-md-5 {
+      min-width: 50% !important;
+      padding-bottom: 0px;
+      margin-right: 0; }
+      .touch .testimonials .scroll-left div.col-md-5 p:last-of-type {
+        padding-bottom: 30px; }
+  .touch .testimonials::after {
+    height: 0px; }
 
 .testimonials {
   position: relative;

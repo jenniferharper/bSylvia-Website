@@ -452,14 +452,23 @@ margin:6% 0;
 
 
 .touch {
-	.testimonials .scroll-left {
-
-		div{
+	.testimonials {
+		.scroll-left {
 			-ms-flex-wrap: wrap !important;
 			flex-wrap: wrap !important;
-			width:50%;
-			padding-bottom:30px;
+			div.col-md-5{
+				min-width:50% !important;
+				padding-bottom:0px;
+				margin-right:0;
+				p:last-of-type{
+					padding-bottom:30px;
+				}
+			}
 		}
+		&::after{
+			height:0px;
+		}
+		margin-bottom:60px;
 	}
 }
 
@@ -527,6 +536,10 @@ margin:6% 0;
 		bottom:0;
 	}
 }
+
+
+	
+
 
 
 .special-feature{
