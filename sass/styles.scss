@@ -456,6 +456,7 @@ margin:6% 0;
 		-ms-flex-wrap: wrap !important;
 		flex-wrap: wrap !important;
 		div{
+			width:50%;
 			padding-bottom:30px;
 		}
 	}
@@ -720,3 +721,51 @@ margin:6% 0;
 	90%  { transform: scale(1.1) rotate(-20deg); }
 	100%   { transform: scale(1) }
   }
+
+
+  /* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* =Preloader */
+
+#preloader {
+	display:none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 2001;
+	background-color: #212121;
+	color: #ffffff; }
+	#preloader .txt {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  -webkit-transform: translate(-50%, -50%);
+		  -ms-transform: translate(-50%, -50%);
+			  transform: translate(-50%, -50%); }
+	#preloader .txt-perc {
+	  font-size: 35px;
+	  font-family: 'Roboto Condensed', Helvetica, Helvetica Neue, Arial, sans-serif;
+	  opacity: 1;
+	  margin: 0 0 6px 0;
+	  max-width: 400px;
+	  text-align: center; }
+	#preloader .progress {
+	  width: 100px;
+	  height: 3px;
+	  background-color: rgba(255, 255, 255, 0.2);
+	  margin: 0 auto 15px auto; }
+	  #preloader .progress span {
+		display: block;
+		width: 0;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.8); }
+
+
+	// #preloader.is-hidden {
+	//   visibility: hidden;
+	//   opacity: 0; }
+  
+//   .is-loading {
+// 	overflow: hidden; }
+

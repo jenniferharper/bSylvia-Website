@@ -1,13 +1,80 @@
 (function($) {
-
-// $(window).resize(function() {
-//         location.reload();
-// });
-
-// if (!Modernizr.touch) {}
 var controller = new ScrollMagic.Controller();
 TweenLite.defaultEase =  Power2.easeInOut;
   
+
+
+// only show preloader if js is working
+var elem = document.querySelector('#preloader');
+elem.style.display = 'block';
+var elem = document.querySelector('.is-loading');
+elem.style.overflow = 'hidden';
+
+
+
+// number of loaded images for preloader progress
+var loadedCount = 0; //current number of images loaded
+var imagesToLoad = $('.img-fluid').length; //number of slides with .bcg container
+var loadingProgress = 0; //timeline progress - starts at 0
+ 
+
+
+$('.img-fluid').imagesLoaded({
+    background: true
+}).progress( function( instance, image ) {
+    loadProgress();
+});
+ 
+function loadProgress(imgLoad, image)
+{
+    //one more image has been loaded
+    loadedCount++;
+ 
+    loadingProgress = (loadedCount/imagesToLoad);
+ 
+    // GSAP tween of our progress bar timeline
+    TweenLite.to(progressTl, 0.7, {progress:loadingProgress, ease:Linear.easeNone});
+ 
+}
+
+//progress timeline
+var progressTl = new TimelineMax({
+    paused: true,
+    onUpdate: progressUpdate,
+    onComplete: loadComplete
+});
+ 
+progressTl
+    //tween the progress bar width
+    .to($('.progress span'), 1, {width:100, ease:Linear.easeNone});
+ 
+//as the progress bar width updates and grows we put the percentage loaded in the screen
+function progressUpdate()
+{
+    //the percentage loaded based on the tween's progress
+    loadingProgress = Math.round(progressTl.progress() * 100);
+ 
+    //we put the percentage in the screen
+    $(".txt-perc").text(loadingProgress + '%');
+ 
+}
+
+function loadComplete() { 
+    // preloader out
+    var preloaderOutTl = new TimelineMax();
+ 
+    preloaderOutTl
+        .set($('body.is-loading'), {css:{overflow:"visible"}})
+		.to($('#preloader'), 0.7, {yPercent: -100, ease:Power4.easeInOut})
+		
+        .from($('.up-text'), 1,{opacity:0, ease:Power1.easeOut },'0' )
+		.from($('.up-text'), 1,{y: '200%', ease:Power1.easeOut  },'0' )
+		.from($('.hello'), 1, {yPercent: 100, ease:Power4.easeInOut},'0')
+
+		
+    return preloaderOutTl;
+}
+
 
 
 $(".clip-me").each(function() {
@@ -75,7 +142,8 @@ tween.to('.scroll-left', 1, {	x:'-150%'},0)
 var scene = new ScrollMagic.Scene({
 	triggerElement: '.testimonials',
 	duration:'400%',
-	triggerHook: 0,
+	triggerHook: '0',
+	offset:'200',
 	reverse: true
 	})
 
