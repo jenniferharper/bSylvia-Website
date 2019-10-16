@@ -99,12 +99,30 @@ h3{
 	}
 }
 
-
+// hide page load preload
 .page-wrapper{
 	overflow-x: hidden;
 	overflow-y:hidden;
 }
 
+
+.navbar,
+.page-wrapper{
+	opacity:1;
+	-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+	-webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+	animation-name: example;
+	animation-duration: 2s;
+}
+
+@-webkit-keyframes example {
+		0%   {opacity:0; }
+		100% { opacity:1;}
+	}
+@keyframes example{
+	0%   {opacity:0; }
+	100% { opacity:1;}
+}
 
 /**********Universal*****************/
 .cover {
