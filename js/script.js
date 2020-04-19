@@ -132,23 +132,36 @@ $(".full-img-feature").each(function() {
   });
 
 // scroll screenLeft 
-
 if (!Modernizr.touch){
+
 var tween = new TimelineMax();
-tween.to('.scroll-left', 1, {	x:'-150%'},0)
+
+tween.to('.scroll-left', 1, {	x:'-150%' },)
 
 var scene = new ScrollMagic.Scene({
 	triggerElement: '.testimonials',
-	duration:'400%',
+	duration:'200%',
 	triggerHook: '0',
 	offset:'200',
-	reverse: true
 	})
-
 	.setPin('.testimonials')
 	.setTween(tween)
-	.addTo(controller)
+	.addTo(controller)	
+
+
+
 }
+
+// scene.on("enter", function (event) {
+// 	// add custom action
+// 	$("#my-elem").left("200");
+//   })
+//   .on("destroy", function (event) {
+// 	// reset my element to start position
+// 	if (event.reset) {
+// 	  $("#my-elem").left("0");
+// 	}
+//   });
 
 
 if ($( window ).width() >= 768) {
@@ -160,6 +173,11 @@ var scene = new ScrollMagic.Scene({triggerElement: ".usp", offset:'150' })
 .setTween(tween)
 .addTo(controller)
 
+tween.to('.navbar', 1, {backgroundColor:'#fff'},0)
+.to('.nav-item', 1, {color:'#333'},0)
+var scene = new ScrollMagic.Scene({triggerElement: "#usp", offset:0,  triggerHook:0})
+.setTween(tween)
+.addTo(controller)
 
 var tween = new TimelineMax();
 tween.to('.navbar', 1, {backgroundColor:'#fff'},0)
