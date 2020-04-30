@@ -4,74 +4,122 @@ TweenLite.defaultEase =  Power2.easeInOut;
   
 
 
-// only show preloader if js is working
-var elem = document.querySelector('#preloader');
-elem.style.display = 'block';
-var elem = document.querySelector('.is-loading');
-elem.style.overflow = 'hidden';
+// // only show preloader if js is working
+// var elem = document.querySelector('#preloader');
+// elem.style.display = 'block';
+// var elem = document.querySelector('.is-loading');
+// elem.style.overflow = 'hidden';
 
 
-// number of loaded images for preloader progress
-var loadedCount = 0; //current number of images loaded
-var imagesToLoad = $('.img-fluid').length; //number of slides with .bcg container
-var loadingProgress = 0; //timeline progress - starts at 0
+// // number of loaded images for preloader progress
+// var loadedCount = 0; //current number of images loaded
+// var imagesToLoad = $('.img-fluid').length; //number of slides with .bcg container
+// var loadingProgress = 0; //timeline progress - starts at 0
  
 
 
-$('.img-fluid').imagesLoaded({
-    background: true
-}).progress( function( instance, image ) {
-    loadProgress();
-});
+// $('.img-fluid').imagesLoaded({
+//     background: true
+// }).progress( function( instance, image ) {
+//     loadProgress();
+// });
  
-function loadProgress(imgLoad, image)
-{
-    //one more image has been loaded
-    loadedCount++;
+// function loadProgress(imgLoad, image)
+// {
+//     //one more image has been loaded
+//     loadedCount++;
  
-    loadingProgress = (loadedCount/imagesToLoad);
+//     loadingProgress = (loadedCount/imagesToLoad);
  
-    // GSAP tween of our progress bar timeline
-    TweenLite.to(progressTl, 0.7, {progress:loadingProgress, ease:Linear.easeNone});
+//     // GSAP tween of our progress bar timeline
+//     TweenLite.to(progressTl, 0.7, {progress:loadingProgress, ease:Linear.easeNone});
  
-}
+// }
 
-//progress timeline
-var progressTl = new TimelineMax({
-    paused: true,
-    onUpdate: progressUpdate,
-    onComplete: loadComplete
-});
+// //progress timeline
+// var progressTl = new TimelineMax({
+//     paused: true,
+//     onUpdate: progressUpdate,
+//     onComplete: loadComplete
+// });
  
-progressTl
-    //tween the progress bar width
-    .to($('.progress span'), 1, {width:100, ease:Linear.easeNone});
+// progressTl
+//     //tween the progress bar width
+//     .to($('.progress span'), 1, {width:100, ease:Linear.easeNone});
  
-//as the progress bar width updates and grows we put the percentage loaded in the screen
-function progressUpdate()
-{
-    //the percentage loaded based on the tween's progress
-    loadingProgress = Math.round(progressTl.progress() * 100);
+// //as the progress bar width updates and grows we put the percentage loaded in the screen
+// function progressUpdate()
+// {
+//     //the percentage loaded based on the tween's progress
+//     loadingProgress = Math.round(progressTl.progress() * 100);
  
-    //we put the percentage in the screen
-    $(".txt-perc").text(loadingProgress + '%');
+//     //we put the percentage in the screen
+//     $(".txt-perc").text(loadingProgress + '%');
  
-}
+// }
 
-function loadComplete() { 
-    // preloader out
-    var preloaderOutTl = new TimelineMax();
+// function loadComplete() { 
+//     // preloader out
+//     var preloaderOutTl = new TimelineMax();
  
-	preloaderOutTl
-        .set($('body.is-loading'), {css:{overflow:"visible"}})
-		.to($('#preloader'), 0.7, {yPercent: -100, ease:Power4.easeInOut})		
-        .from($('.up-text'), 1,{opacity:0, ease:Power1.easeOut },'0' )
-		.from($('.up-text'), 1,{y: '200%', ease:Power1.easeOut  },'0' )
-		.from($('.hello'), 1, {yPercent: 100, ease:Power4.easeInOut},'0')
+// 	preloaderOutTl
+//         .set($('body.is-loading'), {css:{overflow:"visible"}})
+// 		.to($('#preloader'), 0.7, {yPercent: -100, ease:Power4.easeInOut})		
+//         .from($('.up-text'), 1,{opacity:0, ease:Power1.easeOut },'0' )
+// 		.from($('.up-text'), 1,{y: '200%', ease:Power1.easeOut  },'0' )
+// 		.from($('.hello'), 1, {yPercent: 100, ease:Power4.easeInOut},'0')
 
 		
-    return preloaderOutTl;
+//     return preloaderOutTl;
+// }
+
+// navigation bar color change
+if ($( window ).width() >= 768) {
+var tween = new TimelineMax();
+tween.to('.navbar-light', 0, {backgroundColor:'transparent'},0)
+	.to('.nav-item', 0, {color:'#333'},0)
+	
+var scene = new ScrollMagic.Scene({triggerElement: ".hero", offset:0,  triggerHook:0})
+.setTween(tween)
+.addTo(controller)
+
+var tween = new TimelineMax();
+tween.to('.navbar', 1, {backgroundColor:'#f2f2f2'},0)
+.to('.nav-item', 1, {color:'#333'},0)
+var scene = new ScrollMagic.Scene({triggerElement: ".products", offset:0,  triggerHook:0})
+.setTween(tween)
+.addTo(controller)
+
+var tween = new TimelineMax();
+tween.to('.navbar', 1, {backgroundColor:'#5F0017'},0)
+.to('.nav-item', 1, {color:'#fff'},0)
+.to('.navbar-toggler i',  1, {color:'#fff'},0)
+.to('.logo', 1, {fill:'#fff'},0)
+.to('.logo-circle', 1, {fill:'#ffa9a7'},0)
+
+var scene = new ScrollMagic.Scene({triggerElement: ".testimonials", triggerHook:0, offset:'-150'})
+.setTween(tween)
+.addTo(controller)
+
+
+var tween = new TimelineMax();
+tween.to('.navbar', 1, {backgroundColor:'#fff'},0)
+.to('.nav-item', 1, {color:'#333'},0)
+.to('.logo', 1, {fill:'#000'},0)
+
+var scene = new ScrollMagic.Scene({triggerElement: ".special-feature", offset:0})
+.setTween(tween)
+.addTo(controller)
 }
+
+// $(".navbar-toggler").click(function(){
+// 	if ($('.collapse').hasClass('show')){
+// 		$("nav.navbar.fixed-top.navbar-light").css("backgroundColor", "transparent");
+// 	} else{
+// 		$("nav.navbar.fixed-top.navbar-light").css("backgroundColor", "blue");
+// 	}	
+// });
+
 
 
 
@@ -80,7 +128,7 @@ $(".clip-me").each(function() {
 	var cov = $(this).find(".cover");
 	var img = $(this).find(".img-fluid");
 	
-	tl.to(cov, 0, {background:"#92c4b5"})
+	tl.to(cov, 0, {background:"#F8C4D0"})
 	tl.from(cov, 1, { scaleX: 0, transformOrigin: "right",ease:Power4.easeOut });
 	tl.to(cov, 1, { scaleX: 0, transformOrigin: "left" ,ease:Power4.easeOut}, "reveal");
 	tl.from(img, 1, { opacity: 0,ease:Power4.easeOut }, "reveal");
@@ -135,8 +183,8 @@ $(".full-img-feature").each(function() {
 if (!Modernizr.touch){
 
 var tween = new TimelineMax();
+tween.to('.scroll-left', 1, {x:'-150%'},0)
 
-tween.to('.scroll-left', 1, {	x:'-150%' },)
 
 var scene = new ScrollMagic.Scene({
 	triggerElement: '.testimonials',
@@ -147,65 +195,11 @@ var scene = new ScrollMagic.Scene({
 	.setPin('.testimonials')
 	.setTween(tween)
 	.addTo(controller)	
-
-
-
 }
 
-// scene.on("enter", function (event) {
-// 	// add custom action
-// 	$("#my-elem").left("200");
-//   })
-//   .on("destroy", function (event) {
-// 	// reset my element to start position
-// 	if (event.reset) {
-// 	  $("#my-elem").left("0");
-// 	}
-//   });
 
 
-if ($( window ).width() >= 768) {
-var tween = new TimelineMax();
-tween.to('.navbar', 1, {backgroundColor:'#fff'},0)
-.to('.nav-item', 1, {color:'#333'},0)
-.to('.logo-circle', 1, {fill:'#ffa9a7'},0)
-var scene = new ScrollMagic.Scene({triggerElement: ".usp", offset:'150' })
-.setTween(tween)
-.addTo(controller)
 
-tween.to('.navbar', 1, {backgroundColor:'#fff'},0)
-.to('.nav-item', 1, {color:'#333'},0)
-var scene = new ScrollMagic.Scene({triggerElement: "#usp", offset:0,  triggerHook:0})
-.setTween(tween)
-.addTo(controller)
-
-var tween = new TimelineMax();
-tween.to('.navbar', 1, {backgroundColor:'#fff'},0)
-.to('.nav-item', 1, {color:'#333'},0)
-var scene = new ScrollMagic.Scene({triggerElement: ".products", offset:0,  triggerHook:0})
-.setTween(tween)
-.addTo(controller)
-
-
-var tween = new TimelineMax();
-tween.to('.navbar', 1, {backgroundColor:'#263238'},0)
-.to('.nav-item', 1, {color:'#fff'},0)
-.to('.logo', 1, {fill:'#fff'},0)
-.to('.logo-circle', 1, {fill:'#ffa9a7'},0)
-
-var scene = new ScrollMagic.Scene({triggerElement: ".testimonials", triggerHook:0, offset:'-150'})
-.setTween(tween)
-.addTo(controller)
-
-var tween = new TimelineMax();
-tween.to('.navbar', 1, {backgroundColor:'#fff'},0)
-.to('.nav-item', 1, {color:'#333'},0)
-.to('.logo', 1, {fill:'#000'},0)
-
-var scene = new ScrollMagic.Scene({triggerElement: ".special-feature", offset:0})
-.setTween(tween)
-.addTo(controller)
-}
 
 
 })(jQuery);
