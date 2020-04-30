@@ -181,6 +181,9 @@ overflow:visible;
 		height: calc(100vh - 96px);
 		a{font-size:30px;}
 	  }
+	  @media(max-width:767px){
+		  background-color:#fff
+	  }
 }
 
 /*************repeat sections******************/
@@ -468,7 +471,11 @@ overflow:visible;
 	}
 
 	.scroll-left{
-		.pink{background-color: $main;}
+		.pink{
+			background-color: $main;
+			h3,p{color:$darkest;}
+		}
+		
 		div{
 			background-color:$feature;
 			margin-right:20px;
@@ -477,29 +484,23 @@ overflow:visible;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-
-			@media(max-width:767px){
-				padding:40px 20px;
-			}
 			h3{
 				font-family:$other-font;
+				margin-top:20px;
+				color:#fff;
 			}
+			p{color:#fff; text-align:center;}
 			img{
 				width:80px;
+			}
+			@media(max-width:767px){
+				padding:40px 20px;
 			}
 		}
 		
 		.other{
 			padding:0;
-			img{width:100%
-			}
-		}
-
-		.fas{color:#fff;}
-		.fa-quote-left{padding-right:10px;}
-		.fa-quote-right{
-			position: absolute;
-			margin-left:10px;
+			img{width:100%}
 		}
 
 		@media (min-width:1020px){
@@ -521,11 +522,7 @@ overflow:visible;
 }
 
 
-	
-
-
-
-.special-feature{
+.cta{
 	padding-top:6%;
 	h2{font-family:$other-font;}
 	svg{
@@ -649,7 +646,8 @@ overflow:visible;
 		border-top:none;
 	  }
 	  .coln:last-of-type .row{
-		border-right:1px solid #333;
+		border-right-width: 0;
+		border-left-width: 0;
 	  }
 	}
   
