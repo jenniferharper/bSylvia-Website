@@ -374,21 +374,6 @@ svg {
     padding: 0;
     overflow: hidden; }
 
-.touch .testimonials {
-  margin-bottom: 60px; }
-  .touch .testimonials .scroll-left {
-    -ms-flex-wrap: wrap !important;
-    flex-wrap: wrap !important;
-    padding-bottom: 100px; }
-    .touch .testimonials .scroll-left div.col-md-5 {
-      min-width: 50% !important;
-      padding-bottom: 0px;
-      margin-right: 0; }
-      .touch .testimonials .scroll-left div.col-md-5 p:last-of-type {
-        padding-bottom: 30px; }
-  .touch .testimonials::after {
-    height: 0px; }
-
 .testimonials {
   background-color: #5F0017;
   position: relative; }
@@ -441,6 +426,21 @@ svg {
     height: 150px;
     left: 0;
     bottom: 0; }
+
+.touch .testimonials {
+  padding-bottom: 100px;
+  margin-bottom: 60px; }
+  .touch .testimonials .scroll-left {
+    -ms-flex-wrap: wrap !important;
+    flex-wrap: wrap !important; }
+    .touch .testimonials .scroll-left div.col-md-5 {
+      min-width: 50% !important;
+      padding-bottom: 0px;
+      margin-right: 0; }
+      .touch .testimonials .scroll-left div.col-md-5 p:last-of-type {
+        padding-bottom: 30px; }
+  .touch .testimonials::after {
+    height: 0px; }
 
 .cta {
   padding-top: 6%; }
