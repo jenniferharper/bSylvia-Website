@@ -378,7 +378,8 @@ svg {
   margin-bottom: 60px; }
   .touch .testimonials .scroll-left {
     -ms-flex-wrap: wrap !important;
-    flex-wrap: wrap !important; }
+    flex-wrap: wrap !important;
+    padding-bottom: 100px; }
     .touch .testimonials .scroll-left div.col-md-5 {
       min-width: 50% !important;
       padding-bottom: 0px;
