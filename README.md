@@ -1,2 +1,2 @@
 # B. SYLVIA Website
-https://jenniferharper.github.io/B.Sylvia-Website/
+https://jenniferharper.github.io/bSylvia-Website/
