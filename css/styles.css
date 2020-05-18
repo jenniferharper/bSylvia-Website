@@ -42,7 +42,8 @@ h2 {
 
 h3 {
   font-size: 30px;
-  font-weight: 300; }
+  font-weight: 300;
+  font-family: "Pacifico", cursive; }
 
 .text-uppercase {
   font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -398,7 +399,6 @@ svg {
     justify-content: center;
     align-items: center; }
     .testimonials .scroll-left div h3 {
-      font-family: "Pacifico", cursive;
       margin-top: 20px;
       color: #fff; }
     .testimonials .scroll-left div p {

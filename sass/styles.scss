@@ -45,6 +45,7 @@ h2{
 h3{
 	font-size:30px;
 	font-weight: 300; 
+	font-family:$other-font;
 }
 .text-uppercase{font-family:$header-font;font-weight: bold;}
 
@@ -463,7 +464,7 @@ overflow:visible;
 			justify-content: center;
 			align-items: center;
 			h3{
-				font-family:$other-font;
+				
 				margin-top:20px;
 				color:#fff;
 			}
