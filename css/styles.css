@@ -271,7 +271,7 @@ svg {
       #intro::after {
         width: 100%;
         left: 0; } }
-  @media (min-width: 500px) and (max-width: 991px) {
+  @media (min-width: 320px) and (max-width: 991px) {
     #intro {
       padding: 40px 0 0 0; }
       #intro .row.inner {
